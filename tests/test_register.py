@@ -1,7 +1,7 @@
 from tests.base_test import BaseTest
 
 
-class RegisterPage(BaseTest):
+class TestRegisterPage(BaseTest):
     def test_success_registration(self, user_data):
 
         self.register_page.register(
