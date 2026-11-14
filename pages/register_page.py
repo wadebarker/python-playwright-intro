@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, expect
 
-from config.setting import BASE_URL
+from config.setting import BASE_URL, SUCCESS_URL
 from pages.base_page import BasePage
 
 
@@ -52,5 +52,6 @@ class RegisterPage(BasePage):
         self.click_register()
         return self
 
-    def should_be_registered(self, page: Page):
-        expect(page).toHaveURL('/')
+    def should_be_registered(self):
+        expect(self.page).to_have_url(SUCCESS_URL)
+        return self

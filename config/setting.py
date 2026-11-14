@@ -10,3 +10,4 @@ BASE_URL=os.getenv(
 )
 
 DEFAULT_TIMEOUT=int(os.getenv("DEFAULT_TIMEOUT", "10000"))
+SUCCESS_URL=os.getenv("SUCCESS_URL", f"{BASE_URL}/")

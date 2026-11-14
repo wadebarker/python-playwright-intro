@@ -7,7 +7,7 @@ class UserFactory:
 
     @staticmethod
     def generate_email() -> str:
-        return fake.email()
+        return fake.unique.email()
 
 
     @staticmethod
@@ -22,7 +22,7 @@ class UserFactory:
 
     @staticmethod
     def generate_valid_user():
-        user_email = UserFactory.generate_email(),
+        user_email = UserFactory.generate_email()
         user_password = UserFactory.generate_password()
 
         return {
