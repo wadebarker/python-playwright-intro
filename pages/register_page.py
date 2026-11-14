@@ -50,3 +50,6 @@ class RegisterPage(BasePage):
         self.fill_registration_form(email, password, confirm_password)
         self.click_register()
         return self
+
+    def should_be_registered(self, page: Page):
+        expect(page).toHaveURL('/')
