@@ -19,8 +19,6 @@ def browser_context_args(browser_context_args):
 
 @pytest.fixture
 def register_page(page: Page):
-    page.set_default_timeout(DEFAULT_TIMEOUT)
-
     register_page = RegisterPage(page)
     register_page.open_register_page()
     return register_page

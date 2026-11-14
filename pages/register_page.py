@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
 
+from config.setting import BASE_URL
 from pages.base_page import BasePage
 
 
@@ -16,7 +17,7 @@ class RegisterPage(BasePage):
         self.clear_button = page.locator("form button[type='reset']")
 
     def open_register_page(self):
-        self.open("/auth/register")
+        self.open(f"{BASE_URL}/auth/register")
         expect(self.form).to_be_visible()
         return self
 

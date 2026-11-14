@@ -1,7 +1,5 @@
 from faker import Faker
 
-from models import RegisterUser
-
 fake = Faker()
 
 
@@ -23,11 +21,12 @@ class UserFactory:
 
 
     @staticmethod
-    def generate_valid_user() -> RegisterUser:
-        password = UserFactory.generate_password()
+    def generate_valid_user():
+        user_email = UserFactory.generate_email(),
+        user_password = UserFactory.generate_password()
 
-        return RegisterUser(
-            email=UserFactory.generate_email(),
-            password=password,
-            confirm_password=password
-        )
+        return {
+            "email": user_email,
+            "password": user_password,
+            "confirm_password": user_password
+        }
